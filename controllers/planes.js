@@ -5,7 +5,7 @@ exports.getAllPlanes = async (req, res) => {
   const planes = await Plan.find()
   res.status(200).json({ planes})
 }
-exports.getPlanesById = async (req, res) => {
+exports.getPlanById = async (req, res) => {
   const { planId } = req.params
 
   const plan = await Plan.findById(planId)

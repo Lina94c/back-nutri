@@ -1,34 +1,34 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const comidaSchema = new Schema(
+const alimentoSchema = new Schema(
   {
-    Nombre: {
+    name: {
       type: String,
       required: [true],
     },
-    Descripcion: {
+    description: {
       type: String,
     },
-    Porcion: {
+    quantity: {
       type: Number,
       required: true,
     },
-    Unidad_de_medida: {
+    portion: {
       type: String,
       enum: ["gr", "ml"],
       required: true,
     },
-    Grupo_alimenticio: {
+    food_group: {
       type: String,
       enum: ["Grasas", "Proteína", "Carbohidrato", "Fruta", "Verdura"],
       required: [true,],
     },
-    Calorias_kcal: {
+    kcal: {
       type: Number,
       required: true,
     },
-    Creador: {
+    owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
       required: "true",
@@ -37,5 +37,5 @@ const comidaSchema = new Schema(
   { timestamps: true }
 );
 
-const Comida = mongoose.model("Comida", comidaSchema);
-module.exports = Comida;
+const Alimento = mongoose.model("Alimento", alimentoSchema);
+module.exports = Alimento;

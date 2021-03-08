@@ -45,7 +45,7 @@ exports.createPlan = async (req, res) => {
     url,
     owner: req.user.artist
   })
-  await Artist.findByIdAndUpdate(req.user.artist, {
+  await findByIdAndUpdate(req, {
     $push: { planes: plan._id }
   })
 

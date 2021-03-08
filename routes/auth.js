@@ -7,7 +7,7 @@ const {
   signupProcess,
   changeAvatar,
   confirmationProcess,
-} = require("../controllers/auth.controller");
+} = require("../controllers/auth");
 const { isAuth, catchErrors } = require("../middlewares");
 
 router.post("/login", loginProcess);

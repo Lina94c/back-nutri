@@ -22,7 +22,7 @@ const planesSchema = new Schema(
     },
     owner: {
       type: Schema.Types.ObjectId,
-      ref: "Nutriólogo"
+      ref: "User"
     }
   },
   {

@@ -11,7 +11,10 @@ const userSchema = new Schema(
         type: String,
         unique: true
       },
-      password: String,
+      password: {
+        type: String,
+        required: [true, "Please add a password"],
+      },
       avatar: {
         type: String,
         default: "https://www.shankarainfra.com/img/avatar.png"

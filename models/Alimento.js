@@ -3,20 +3,15 @@ const Schema = mongoose.Schema;
 
 const alimentoSchema = new Schema(
   {
+    image:{
+      type: [IMAGE],
+    },
     name: {
       type: String,
       required: [true],
     },
-    description: {
-      type: String,
-    },
     quantity: {
       type: Number,
-      required: true,
-    },
-    portion: {
-      type: String,
-      enum: ["gr", "ml"],
       required: true,
     },
     food_group: {
@@ -28,11 +23,7 @@ const alimentoSchema = new Schema(
       type: Number,
       required: true,
     },
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: "true",
-    },
+    
   },
   { timestamps: true }
 );

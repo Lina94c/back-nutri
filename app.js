@@ -11,7 +11,7 @@ const flash      = require("connect-flash");
     
 
 mongoose
-  .connect('mongodb://localhost/server', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -27,6 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use (express.static('public'))
+
 
 // Enable authentication using session + passport
 app.use(session({
@@ -37,10 +39,14 @@ app.use(session({
 }))
 app.use(flash());
 require('./passport')(app);
-    
 
-app.use('/', require('./routes/index'));
-app.use('/auth', require('./routes/auth'));
-      
+
+//Rutas
+app.use('/api/', require('./routes/index'));
+app.use('/api/auth', require('./routes/auth'));
+
+app.use('*',(req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 module.exports = app;

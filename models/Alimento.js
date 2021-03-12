@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const alimentoSchema = new Schema(
   {
     image:{
-      type: [IMAGE],
+      type: String,
     },
     name: {
       type: String,

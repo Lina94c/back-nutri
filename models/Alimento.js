@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const alimentoSchema = new Schema(
   {
     image:{
-      type: [IMAGE],
+      type: String,
     },
     name: {
       type: String,
@@ -13,11 +13,6 @@ const alimentoSchema = new Schema(
     quantity: {
       type: Number,
       required: true,
-    },
-    food_group: {
-      type: String,
-      enum: ["Grasas", "Proteína", "Carbohidrato", "Fruta", "Verdura"],
-      required: [true,],
     },
     kcal: {
       type: Number,

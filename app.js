@@ -21,6 +21,14 @@ mongoose
 
 const app = express();
 
+app.use(
+  cors({
+    origin:["http://localhost:3000","https://nutrismartjoin.herokuapp.com/"],
+    credentials: true,
+  })
+);
+
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -41,6 +49,11 @@ require('./passport')(app);
 
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
+
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+     
       
 
 module.exports = app;

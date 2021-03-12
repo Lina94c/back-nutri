@@ -37,7 +37,7 @@ exports.updateAlimento = async (req, res) => {
 
   res.status(200).json(alimento)
 }
-exports.deletePlan = async (req, res) => {
+exports.deleteAlimento= async (req, res) => {
   const { alimentoId } = req.params
 
   await Alimento.findByIdAndRemove(alimentoId)

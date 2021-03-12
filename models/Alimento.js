@@ -14,11 +14,6 @@ const alimentoSchema = new Schema(
       type: Number,
       required: true,
     },
-    food_group: {
-      type: String,
-      enum: ["Grasas", "Proteína", "Carbohidrato", "Fruta", "Verdura"],
-      required: [true,],
-    },
     kcal: {
       type: Number,
       required: true,

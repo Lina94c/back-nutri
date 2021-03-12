@@ -11,11 +11,12 @@ exports.getAlimentosById = async (req, res) => {
 }
 
 exports.createAlimento = async (req, res) => {
-  const { name, description, kcal } = req.body
+  const { name, image, quantity, kcal } = req.body
 
   const alimento = await Alimento.create({
+    image,
+    quantity,
     name,
-    description,
     kcal,
   })
   await findByIdAndUpdate(req, {
@@ -27,11 +28,11 @@ exports.createAlimento = async (req, res) => {
 
 exports.updateAlimento = async (req, res) => {
   const { alimentoId } = req.params
-  const { name, description, kcal } = req.body
+  const { name,quantity, image, kcal } = req.body
 
   const alimento = await Alimento.findByIdAndUpdate(
     alimentoId,
-    { name, description, kcal },
+    { name, quantity, image, kcal },
     { new: true }
   )
 

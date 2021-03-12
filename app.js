@@ -42,7 +42,7 @@ require('./passport')(app);
 
 
 //Rutas
-app.use('/api/', require('./routes/index'));
+app.use('/api', require('./routes/index'));
 app.use('/api/auth', require('./routes/auth'));
 
 app.use('*',(req,res)=>{

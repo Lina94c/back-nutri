@@ -8,6 +8,7 @@ const logger       = require('morgan');
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
+const cors = require("cors");
     
 
 mongoose

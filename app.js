@@ -50,8 +50,9 @@ app.use(session({
 app.use(flash());
 require('./passport')(app);
 
-app.use('/', require('./routes/index'));
-app.use('/auth', require('./routes/auth'));
+
+app.use('/api', require('./routes/index'));
+app.use('/api/auth', require('./routes/auth'));
 
 app.use("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));

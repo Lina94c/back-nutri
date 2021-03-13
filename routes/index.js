@@ -44,11 +44,11 @@ router.get("/artist/all", catchErrors(getAllArtists))
 router.get("/artist/:artistId", catchErrors(getArtistsById))*/
 
 //=========== Alimentos ===========
-router.get("/alimento", catchErrors(getAllAlimentos))
-router.post("/alimento", isAuth, catchErrors(createAlimento))
-router.get("/alimento/:alimentoId", catchErrors(getAlimentoById))
-router.patch("/alimento/:alimentoId", catchErrors(updateAlimento))
-router.delete("/alimento/:alimentoId", catchErrors(deleteAlimento))
+router.get("/alimentos", catchErrors(getAllAlimentos))
+router.post("/alimentos", isAuth, catchErrors(createAlimento))
+router.get("/alimentos/:alimentoId", catchErrors(getAlimentoById))
+router.patch("/alimentos/:alimentoId", catchErrors(updateAlimento))
+router.delete("/alimentos/:alimentoId", catchErrors(deleteAlimento))
 
 //=========== Planes ===========
 router.get("/plan", catchErrors(getAllPlanes))

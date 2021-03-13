@@ -8,15 +8,12 @@ const alimentoSchema = new Schema(
     },
     name: {
       type: String,
-      required: [true],
     },
     quantity: {
       type: Number,
-      required: true,
     },
     kcal: {
       type: Number,
-      required: true,
     },
     
   },

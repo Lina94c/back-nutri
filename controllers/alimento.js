@@ -11,10 +11,9 @@ exports.getAlimentosById = async (req, res) => {
 }
 
 exports.createAlimento = async (req, res) => {
-  const { name, image, quantity, kcal } = req.body
+  const { name, quantity, kcal } = req.body
 
   const alimento = await Alimento.create({
-    image,
     quantity,
     name,
     kcal,

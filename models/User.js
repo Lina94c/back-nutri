@@ -23,7 +23,7 @@ const userSchema = new Schema(
         type: String,
         enum: ["Femenino", "Masculino"],
       },
-      age: {
+      /*age: {
         type: Number,
         min: 15,
         max: 75,
@@ -33,7 +33,7 @@ const userSchema = new Schema(
         type: Number,
         min: 50,
         max: 200,
-        required: [
+        /*required: [
           true,
           "Ingresa tu estatura",
         ],
@@ -60,7 +60,7 @@ const userSchema = new Schema(
           "Aumentar masa muscular",
         ],
         required: [true, "Es necesario que especifiques tu objetivo"],
-      },
+      },*/
     },
     { timestamps: true }
 );

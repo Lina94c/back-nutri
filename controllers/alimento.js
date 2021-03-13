@@ -1,7 +1,7 @@
 const Alimento= require("../models/Alimento")
 
 exports.getAllAlimentos = async (req, res) => {
-  const  alimentos = await alimentos.find()
+  const  alimentos = await Alimento.find()
   res.status(200).json({ alimentos})
 }
 exports.getAlimentosById = async (req, res) => {
